@@ -1,0 +1,36 @@
+<br><h1>NgModel</h1>
+
+
+
+
+<label for="placa">Placa:</label><br>
+<input type="text" [(ngModel)]="placa">
+{{placa}} <br><br>
+
+<label for="color">Color:</label><br>
+<input type="text" [(ngModel)]="color">
+{{color}} <br><br>
+
+<label for="kilometraje">Kilometraje:</label><br>
+<input type="number" [(ngModel)]="kilometraje">
+{{kilometraje}}
+
+
+
+
+
+<h1>Reactive Forms</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Modelo:</label><br>
+    <input type="text" formControlName="modelo">
+    <small *ngIf="form.controls['modelo'].errors && form.controls['modelo'].touched">
+        Tiene errores
+    </small>
+    <br><br>
+
+    <label>Año:</label><br>
+    <input type="number" formControlName="year"><br>
+
+    <button pButton type="submit" label="Guardar"></button>
+</form>
+
