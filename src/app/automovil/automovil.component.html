@@ -1,36 +1,44 @@
-<br><h1>NgModel</h1>
+<br><br>
+<h1>NgModel</h1>
 
-
-
-
-<label for="placa">Placa:</label><br>
-<input type="text" [(ngModel)]="placa">
-{{placa}} <br><br>
-
-<label for="color">Color:</label><br>
-<input type="text" [(ngModel)]="color">
-{{color}} <br><br>
-
-<label for="kilometraje">Kilometraje:</label><br>
-<input type="number" [(ngModel)]="kilometraje">
-{{kilometraje}}
-
-
-
-
+<label for="name">Name:</label>
+<br>
+<input type="text" [(ngModel)]="modelo">
+<br>
+{{modelo}}
 
 <h1>Reactive Forms</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <label>Modelo:</label><br>
+
+    <label>Modelo:</label>
+    <br>
     <input type="text" formControlName="modelo">
-    <small *ngIf="form.controls['modelo'].errors && form.controls['modelo'].touched">
-        Tiene errores
+    <br>
+    <small *ngIf="form.controls['modelo'].errors 
+    && form.controls['modelo'].touched" style="color: rgb(255, 119, 119);">
+        Campo obligatorio
     </small>
-    <br><br>
+    <br>
 
-    <label>Año:</label><br>
-    <input type="number" formControlName="year"><br>
+    <label>Placa:</label>
+    <br>
+    <input type="text" formControlName="placa" >
 
-    <button pButton type="submit" label="Guardar"></button>
+    <br>
+    <label>Año:</label>
+    <br>
+    <input type="text" formControlName="year">
+    <br>
+    <small *ngIf="form.controls['year'].errors 
+    && form.controls['year'].touched" style="color: rgb(255, 119, 119);">
+        Campo obligatorio
+    </small>
+    <br>
+
+    <label>Kilometraje:</label>
+    <br>
+    <input type="number" formControlName="kilometraje">
+    <br>
+    <button pButton type="submit" >Guardar</button>
 </form>
 

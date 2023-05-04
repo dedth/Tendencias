@@ -7,6 +7,7 @@ import { AutomovilComponent } from './automovil/automovil.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 
 
@@ -25,6 +26,7 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     BrowserAnimationsModule,
     ButtonModule,
+    ToggleButtonModule
     
     
   ],

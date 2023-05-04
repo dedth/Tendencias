@@ -7,22 +7,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./automovil.component.css']
 })
 export class AutomovilComponent {
-  year: number= 0;
   modelo: string = '';
   placa: string = '';
-  color: string = '';
+  year: Date = new Date();
   kilometraje: number = 0;
+  estado: boolean = false;
 
   form: FormGroup;//Reactive Form
-  
 
   constructor(private formBuilder: FormBuilder) {
     this.form = formBuilder.group({
+      modelo: ['', [Validators.required]],
+      placa: ['', [Validators.minLength(6)]],
       year: ['', [Validators.required]],
-      modelo: ['', [Validators.required ]],
-      placa: ['', [Validators.required ]],
-      color: ['', [Validators.required]],
-      kilometraje: ['', [Validators.required]],
+      kilometraje: [0, [Validators.required, Validators.minLength(3000)]],
+      state: [false,[]],
     })
   }
 
